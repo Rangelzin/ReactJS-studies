@@ -1,26 +1,23 @@
-const getWeekday = () => {
-    return new Intl.DateTimeFormat('pt-br', {weekday: 'long'}).format(new Date());
-}
+type Props = {
+  name: string;
+  avatar?: string;
+  roles: string[];
+};
 
-
-export const Person = () => {
-    const name: string = "Elon Musk"
-    const avatar: string = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Elon_Musk_Colorado_2022_%28cropped2%29.jpg/270px-Elon_Musk_Colorado_2022_%28cropped2%29.jpg"
-
-
-    return (
-        <>
-            <h1>{name} - {getWeekday()}</h1>
-            <img 
-                src={avatar}
-                alt={name}
-                className=" h-40"
-            />
+export const Person = ({ 
+    name, 
+    avatar = 'https://png.pngtree.com/element_our/20200610/ourlarge/pngtree-black-default-avatar-image_2237212.jpg', 
+    roles 
+}: Props) => {
+        return (
+            <div className="inline-block p-4 m-4 border-2 border-gray-700 w-fit">
+            <h1>{name}</h1>
+            <img src={avatar} alt={name} className=" h-40" />
             <ul>
-                <li>CEO da Tesla</li>
-                <li>CEO da SpaceX</li>
-                <li>CEO do X</li>
+                <li>{roles[0]}</li>
+                <li>{roles[1]}</li>
+                <li>{roles[2]}</li>
             </ul>
-        </>
-    );
-}
+            </div>
+        );
+};
