@@ -1,25 +1,39 @@
-import { peopleList } from "@/data/peopleList";
+// import { peopleList } from "@/data/peopleList";
+// const Page = () => {
 
-const Page = () => {
-  return (
-    <div>
-      <h1 className="font-bold text-2xl">Olá Mundo</h1>
-      <h3>Algum outro texto</h3>
+//   const chemists = peopleList.filter(person => person.profession == 'chemist');
 
-      {peopleList.length > 0 && (
-        <ul>
-          {peopleList.map((person) => (
-            <li key={person.id}>
-              {person.name} - {person.profession}
-            </li>
-          ))}
-        </ul>
-      )}
-    </div>
-  );
-};
 
-export default Page;
+//   return (
+//     <div>
+//       <h1 className="font-bold text-2xl">Olá Mundo</h1>
+//       <h3>Algum outro texto</h3>
+
+//       {chemists.length > 0 && 
+//         <>
+//           <h3>Lista de Quimicos:</h3>
+//           <ul>
+//             {chemists.map(person => 
+//               <li key={person.id}>{person.name}</li>
+//             )}
+//           </ul>
+//         </>
+//       }
+
+//       {peopleList.length > 0 && (
+//         <ul>
+//           {peopleList.map((person) => (
+//             <li key={person.id}>
+//               {person.name} - {person.profession}
+//             </li> 
+//           ))}
+//         </ul>
+//       )} *
+//     </div>
+//   );
+// };
+
+// export default Page;
 
 // import { Card } from "@/components/card";
 // import { Person } from "@/components/Person";
@@ -53,3 +67,19 @@ export default Page;
 // };
 
 // export default Page;
+
+import { Hours } from "@/components/hours";
+
+const Page = () => {
+  return (
+    <main className="w-screen h-screen bg-gradient-to-r from-blue-500 to-purple-500">
+      <div className="h-1/2 flex items-center justify-center">
+        <Hours />
+  
+      </div>
+    </main>
+  );
+}
+
+
+export default Page;
