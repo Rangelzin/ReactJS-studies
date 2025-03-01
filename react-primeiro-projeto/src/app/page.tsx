@@ -72,11 +72,8 @@ import { Hours } from "@/components/hours";
 
 const Page = () => {
   return (
-    <main className="w-screen h-screen bg-gradient-to-r from-blue-500 to-purple-500">
-      <div className="h-1/2 flex items-center justify-center">
-        <Hours />
-  
-      </div>
+    <main className="w-screen h-screen bg-gradient-to-r flex items-center justify-center from-sky-400 to-indigo-600">
+      <Hours />
     </main>
   );
 }
