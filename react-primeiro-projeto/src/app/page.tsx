@@ -1,47 +1,48 @@
 // import { peopleList } from "@/data/peopleList";
 // const Page = () => {
 
+
 //   const chemists = peopleList.filter(person => person.profession == 'chemist');
 
 
 //   return (
-//     <div>
-//       <h1 className="font-bold text-2xl">Olá Mundo</h1>
-//       <h3>Algum outro texto</h3>
-
-//       {chemists.length > 0 && 
-//         <>
-//           <h3>Lista de Quimicos:</h3>
-//           <ul>
-//             {chemists.map(person => 
-//               <li key={person.id}>{person.name}</li>
-//             )}
-//           </ul>
-//         </>
-//       }
-
-//       {peopleList.length > 0 && (
-//         <ul>
-//           {peopleList.map((person) => (
-//             <li key={person.id}>
-//               {person.name} - {person.profession}
-//             </li> 
-//           ))}
-//         </ul>
-//       )} *
-//     </div>
-//   );
-// };
-
-// export default Page;
-
-// import { Card } from "@/components/card";
-// import { Person } from "@/components/Person";
-
-// const Page = () => {
-//   return (
-//     <div>
-//       <h1 className="font-bold text-2xl"> Ola mundo!</h1>
+  //     <div>
+  //       <h1 className="font-bold text-2xl">Olá Mundo</h1>
+  //       <h3>Algum outro texto</h3>
+  
+  //       {chemists.length > 0 && 
+  //         <>
+  //           <h3>Lista de Quimicos:</h3>
+  //           <ul>
+  //             {chemists.map(person => 
+  //               <li key={person.id}>{person.name}</li>
+  //             )}
+  //           </ul>
+  //         </>
+  //       }
+  
+  //       {peopleList.length > 0 && (
+    //         <ul>
+    //           {peopleList.map((person) => (
+      //             <li key={person.id}>
+      //               {person.name} - {person.profession}
+      //             </li> 
+      //           ))}
+      //         </ul>
+      //       )} *
+      //     </div>
+      //   );
+      // };
+      
+      // export default Page;
+      
+      // import { Card } from "@/components/card";
+      // import { Person } from "@/components/Person";
+      
+      // const Page = () => {
+        //   return (
+          //     <div>
+          //       <h1 className="font-bold text-2xl"> Ola mundo!</h1>
 //       <h3>oi pessoa!</h3>
 
 //       /* <Card
@@ -68,15 +69,24 @@
 
 // export default Page;
 
-import { Hours } from "@/components/hours";
+// import { Hours } from "@/components/hours";
 
-const Page = () => {
-  return (
-    <main className="w-screen h-screen bg-gradient-to-r flex items-center justify-center from-sky-400 to-indigo-600">
-      <Hours />
-    </main>
-  );
-}
-
+// const Page = () => {
+  //   return (
+    //     <main className="w-screen h-screen bg-gradient-to-r flex items-center justify-center from-sky-400 to-indigo-600">
+    //       <Hours />
+    //     </main>
+    //   );
+    // }
+    
+    
+    // export default Page;
+import { Rating } from "@/components/rating";
+    
+  const  Page = () => (
+    <div className="w-screen h-screen flex justify-center items-center text-white" >
+      <Rating rating={5}/>
+    </div>
+  )
 
 export default Page;
