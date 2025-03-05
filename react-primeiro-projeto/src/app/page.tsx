@@ -89,11 +89,12 @@
 // export default Page;
 
 import { StudentsTable } from "@/components/StudentsTable";
-import { students } from "@/data/students";
+import { students } from "@/data/students"; 
 
 const Page = () => {
   return (
     <div className="container mx-auto">
+      <h1 className="text-6xl">Lista de estudantes:</h1>
       <StudentsTable students={students} />
     </div>
   )
