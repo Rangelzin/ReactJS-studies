@@ -1,5 +1,20 @@
 "use client";
 
+// -> PADRAOOOO
+
+// import { useState } from "react";
+
+// const Page = () => {
+
+//   return (
+//     <div className="w-screen h-screen flex flex-col justify-center items-center text-3xl">
+
+//     </div>
+//   );
+// };
+
+// export default Page;
+
 // const Page = () => {
 
 //   function handleCLick() {
@@ -111,22 +126,72 @@
 
 // export default Page;
 
+// import { useState } from "react";
+
+// const Page = () => {
+//   const [nameInput, setNameInput] = useState("");
+
+//   const handleBtnClick = () => {
+//     alert(nameInput)
+//   };
+
+//   return (
+//     <div className="w-screen h-screen flex flex-col justify-center items-center text-3xl">
+//       <input
+//         type="text"
+//         className="bg-white border border-black p-3 text-xl text-black rounded-md"
+//         placeholder="Digite seu nome:"
+//           value={nameInput}
+//         onChange={e => setNameInput(e.target.value)}
+//       />
+//       <p>Seu nome é: {nameInput}</p>
+//       <button onClick={handleBtnClick}>Mostrar valor do campo</button>
+//     </div>
+//   );
+// };
+
+// export default Page;
+
+// import { useState } from "react";
+
+// const Page = () => {
+//   const [count, setCount] = useState(0);
+
+//   const handleBtnClick = () => { // pegar o valor atualizado da FILA
+//     setCount(count + 2);
+//     alert(c => c + 2)
+//   };
+
+//   return (
+//     <div className="w-screen h-screen flex flex-col justify-center items-center text-3xl">
+//       <p>{count}</p>
+//       <button onClick={handleBtnClick} className="bg-blue-700 text-white p-3 rounded-md">+2
+//       </button>
+//     </div>
+//   );
+// };
+
+// export default Page;
+
 import { useState } from "react";
 
 const Page = () => {
-  const [nameInput, setNameInput] = useState("");
-
-  const handleBtnClick = () => {};
 
   return (
     <div className="w-screen h-screen flex flex-col justify-center items-center text-3xl">
       <input
         type="text"
-        className="bg-white border border-black p-3 text-xl text-black rounded-md"
-        placeholder="Digite seu nome:"
-        value={nameInput}
+        placeholder="Nome"
+        className="border bg-white border-black p-3 text-2xl text-black rounded-md mb-3"
       />
-      <button onClick={handleBtnClick}>Mostrar valor do campo</button>
+      <input
+        type="text"
+        placeholder="Sobrenome"
+        className="border bg-white border-black p-3 text-2xl text-black rounded-md mb-3"
+      />
+      
+      <p>Meu nome é:</p>
+      <p>...</p>
     </div>
   );
 };
