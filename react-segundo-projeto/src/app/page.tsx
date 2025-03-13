@@ -173,25 +173,96 @@
 
 // export default Page;
 
+// import { useState } from "react";
+// import { Person } from "@/types/Person";
+
+// const Page = () => {
+//   const [fullname, setFullName] = useState<Person>({
+//     name: "",
+//     lastname: "",
+//   });
+
+//   const handleClearButton = () => {
+//     setFullName({ name: "", lastname : "" });
+//   }
+
+//   return (
+//     <div className="w-screen h-screen flex flex-col justify-center items-center text-3xl">
+//       <input
+//         type="text"
+//         placeholder="Nome"
+//         className="border bg-white border-black p-3 text-2xl text-black rounded-md mb-3"
+//         //value={fullname.name}
+//         onChange={(e) => setFullName({ ...fullname, name: e.target.value })}
+//       />
+//       <input
+//         type="text"
+//         placeholder="Sobrenome"
+//         className="border bg-white border-black p-3 text-2xl text-black rounded-md mb-3"
+//         //value={fullname.lastname}
+//         onChange={(e) => setFullName({ ...fullname, lastname: e.target.value })}
+//       />
+
+//       <p>Meu nome é:</p>
+//       <p>
+//         {fullname.name} {fullname.lastname}
+//       </p>
+//       <button onClick={handleClearButton} className="p-3 bg-red-600 text-white rounded-xl hover:bg-red-500">Limpar tudo</button>
+//     </div>
+//   );
+// };
+
+// export default Page;
+
 import { useState } from "react";
+import { TodoItem } from "@/types/Todoitem";
 
 const Page = () => {
 
+  const deleteItem = (index: number) => {
+    setList(list.filter((item, key) => key !== index));
+  }
+
+  const handleAddButton = () => {
+    if (itemInput.trim()=== '') return;
+    setList([...list, { label: itemInput, checked: false }]);
+    setItemInput("");
+  }
+
+  const [itemInput, setItemInput] = useState("");
+
+  const [list, setList] = useState<TodoItem[]>([
+    { label: "Fazer dever de casa", checked: false },
+    { label: "Comprar bolo", checked: false },
+  ]);
+
   return (
-    <div className="w-screen h-screen flex flex-col justify-center items-center text-3xl">
-      <input
-        type="text"
-        placeholder="Nome"
-        className="border bg-white border-black p-3 text-2xl text-black rounded-md mb-3"
-      />
-      <input
-        type="text"
-        placeholder="Sobrenome"
-        className="border bg-white border-black p-3 text-2xl text-black rounded-md mb-3"
-      />
-      
-      <p>Meu nome é:</p>
-      <p>...</p>
+    <div className="w-screen h-screen flex flex-col items-center text-3xl">
+      <h1>Lista de Tarefas</h1>
+
+      <div className="flex w-full max-w-lg my-3 p-4 rounded-md bg-gray-700 border-b border-gray-600">
+        <input
+          type="text"
+          placeholder="Digite sua tarefa"
+          className="flex-1 border border-black p-3 text-2xl text-black bg-white rounded mr-3"
+          value={itemInput}
+          onChange={(e) => setItemInput(e.target.value)}
+        />
+        <button onClick={handleAddButton}>Adcionar</button>
+      </div>
+
+      <p className="my-4">{list.length} Itens na Lista</p>
+
+      <ul className="w-full max-w-lg list-disc pl-5">
+        {list.map((item, index) => (
+          <li key={index} className="my-2">
+            {item.label} -{" "}
+            <button 
+            onClick={()=> deleteItem(index)}
+            className="hover:underline">[ deletar ]</button>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };
