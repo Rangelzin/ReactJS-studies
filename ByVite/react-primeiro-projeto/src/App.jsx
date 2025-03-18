@@ -4,7 +4,7 @@ import Taks from "./components/Tasks";
 function App() {
   return (
     <div>
-      <h1>Gerenciador de Tarefas</h1>
+      <h1 className="text-red-500 text-2xl">Gerenciador de Tarefas</h1>
       <Taks />
       <AddTaks />
     </div>
